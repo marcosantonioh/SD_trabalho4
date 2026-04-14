@@ -1,0 +1,9 @@
+FROM gcc:11
+
+WORKDIR /app
+
+COPY . .
+
+RUN g++ escravo2.cpp -o escravo2 -pthread
+
+CMD ["./escravo2"]
