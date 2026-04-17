@@ -8,6 +8,10 @@ int main(){
 
     Server svr;
 
+    svr.Get("/health", [](const Request&, Response& res) {
+        res.set_content("OK", "text/plain");
+    });
+
     svr.Post("/tamanho", [](const Request& req, Response& res){
 
         std::stringstream ss(req.body);

@@ -8,6 +8,11 @@ int main(){
 
     std::ifstream file("palavras.txt");
 
+    if(!file){
+        std::cout<<"Erro ao abrir palavras.txt\n";
+        return 1;
+    }
+
     std::string text(
         (std::istreambuf_iterator<char>(file)),
         std::istreambuf_iterator<char>()
@@ -19,6 +24,8 @@ int main(){
 
     if(res){
         std::cout<<res->body<<std::endl;
+    }else{
+        std::cout<<"Erro ao conectar ao mestre\n";
     }
 
 }

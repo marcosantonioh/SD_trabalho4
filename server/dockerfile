@@ -4,6 +4,6 @@ WORKDIR /app
 
 COPY . .
 
-RUN g++ escravo1.cpp -o escravo1 -pthread
+RUN g++ mestre.cpp -o mestre -pthread
 
-CMD ["./escravo1"]
+CMD ["./mestre"]
